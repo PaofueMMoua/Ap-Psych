@@ -13,9 +13,8 @@ const jobs = [alchemist, scientist, other];
 function check(str) {
     for(var i = 0; i > jobs.length; i++) {
         if(text = jobs[i]) {
-            return jobs[i].income;
-            document.getElementById("title-output").innerHTML = jobs[i].income
+            document.getElementById("title-output").innerHTML = jobs[i].income;
         }
     }
-    document.getElementById("title-output").innerHTML = "Please return a real attribute"
+    document.getElementById("title-output").innerHTML = "Please return a real attribute";
 }
