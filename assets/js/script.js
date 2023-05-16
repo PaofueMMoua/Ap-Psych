@@ -1,20 +1,572 @@
-const text_input = document.getElementById("Title-input");
+types = ['Humanistic', 'Evolutionary','behavoral', "cognitive, 'evolutionary", 'psychodynamic','biological'];
 
-function text(str) {
-    return text.toLowerCase
+gameData = {
+    step: 1,
+    hero: {},
+    enemy: {}
 }
 
-const alchemist = {job="Alchemist", income="14,000"};
-const scientist = {job="Scientist", income="15,000"};
-const other = {job="Other", income="Null"};
+attackName = '';
+curAttack = {};
+randInt = 0;
+enemyAttack = {};
+defendProgressInt = null;
+defendProgressComplete = 0;
+progressInt = null;
+progressComplete = 0;
 
-const jobs = [alchemist, scientist, other];
-
-function check(str) {
-    for(var i = 0; i > jobs.length; i++) {
-        if(text = jobs[i]) {
-            document.getElementById("title-output").innerHTML = jobs[i].income;
+characters = [
+    {
+        name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
         }
-    }
-    document.getElementById("title-output").innerHTML = "Please return a real attribute";
-}
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    }, {
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },{
+            name:William,
+        type:,
+        resistance:,
+        img: {
+            default: '',
+            front:''
+        },
+        hp: {
+            current:,
+            total:
+        },
+            attacks: [
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        },
+        {
+        name: ,
+        hp: ,
+        avail: {
+            total: ,
+            remaining: 
+        }
+        }
+    ]
+    },
+]
